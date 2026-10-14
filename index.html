@@ -35,13 +35,13 @@
   <div class="bg-brand-900 h-2.5"></div>
 
   <header id="site-header" class="sticky top-0 z-40 bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 xl:gap-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 h-20 flex items-center justify-between gap-3 xl:gap-6">
 
       <!-- Logo + divider + tagline -->
       <a href="#" class="header-brand flex items-center gap-3 lg:gap-2 xl:gap-4 shrink-0">
         <img src="images/logo.png" alt="Meraz Roofing Inc. logo" class="h-9 lg:h-8 xl:h-11 w-auto object-contain">
         <span class="leading-none">
-          <span class="block font-display font-bold text-[22px] xl:text-[26px] text-slate-800">Meraz Roofing Inc.</span>
+          <span class="block font-display font-bold text-[22px] lg:text-[19px] xl:text-[26px] text-slate-800">Meraz Roofing Inc.</span>
           <span class="block text-[9px] tracking-[0.18em] uppercase text-slate-500 mt-1">Fresno, CA &middot; Lic. #899884</span>
         </span>
         <span class="hidden 2xl:block h-9 w-px bg-slate-300"></span>
@@ -852,6 +852,10 @@
     /* Reviews track: line up with the page container on the left, run off the right edge, hide the scrollbar */
     .reviews-track { padding-left: max(1rem, calc((100% - 72rem) / 2 + 2rem)); padding-right: 1rem; scroll-padding-left: max(1rem, calc((100% - 72rem) / 2 + 2rem)); scrollbar-width: none; }
     .reviews-track::-webkit-scrollbar { display: none; }
+    /* Contact grid: let columns shrink below the select's option width on very narrow phones */
+    #contact .grid > * { min-width: 0; }
+    /* Touch screens: taller tap area on small footer links without changing the layout */
+    @media (pointer: coarse) { footer ul a { display: inline-block; padding: 8px 0; margin: -8px 0; } }
     /* Services tiles 2 and 3: curved cutout that follows the round collage (--cx/--cy/--cr are set by script) */
     @media (min-width: 1024px) {
       .cut-svc {
